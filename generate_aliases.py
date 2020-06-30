@@ -42,16 +42,23 @@ def main():
         ('p', 'proxy', None, ['sys']),
         ('pf', 'port-forward', None, ['sys']),
         ('g', 'get', None, None),
+        ('r', 'rollout', None, ['sys']),
         ('d', 'describe', None, None),
         ('rm', 'delete', None, None),
         ('run', 'run --rm --restart=Never --image-pull-policy=IfNotPresent -i -t', None, None),
-        ]
+        ('ctx', 'ctx', None, None),
+        ('ns', 'ns', None, None),
+        ] 
 
     res = [
+        ('skrt', 'restart', ['r'], None),
         ('po', 'pods', ['g', 'd', 'rm'], None),
         ('dep', 'deployment', ['g', 'd', 'rm'], None),
         ('svc', 'service', ['g', 'd', 'rm'], None),
         ('ing', 'ingress', ['g', 'd', 'rm'], None),
+        ('ir', 'ingressroute', ['g', 'd', 'rm'], None),
+        ('pv', 'persistentvolume', ['g', 'd', 'rm'], None),
+        ('pvc', 'persistentvolumeclaim', ['g', 'd', 'rm'], None),
         ('cm', 'configmap', ['g', 'd', 'rm'], None),
         ('sec', 'secret', ['g', 'd', 'rm'], None),
         ('no', 'nodes', ['g', 'd'], ['sys']),
